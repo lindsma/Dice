@@ -39,6 +39,10 @@ section.game-container {
         background: lightgrey;
         border: 1px solid #000;
         float: left; }
+        section.game-container div.dice-container div.dice div.die p.die-roll {
+          text-align: center;
+          font-size: 20px;
+          padding-top: 30px; }
       section.game-container div.dice-container div.dice .one {
         margin-right: 17.6%; }
       section.game-container div.dice-container div.dice .two {
@@ -54,7 +58,7 @@ section.game-container {
       padding: 5px 15px;
       border-radius: 10px;
       border: 1px solid #fff; }
-  section.game-container p {
+  section.game-container p.game-date-time {
     height: 30px;
     background: red;
     margin-top: 20px; }

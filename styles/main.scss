@@ -48,6 +48,12 @@ section.game-container {
                 background: lightgrey;
                 border: 1px solid #000;
                 float: left;
+
+                p.die-roll {
+                  text-align: center;
+                  font-size: 20px;
+                  padding-top: 30px;
+                }
             }
 
             .one {
@@ -75,7 +81,7 @@ section.game-container {
             }
         }
 
-        p {
+        p.game-date-time {
           height: 30px;
           background: red;
           margin-top: 20px;
