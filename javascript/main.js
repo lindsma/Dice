@@ -13,7 +13,8 @@ var gameObject = {
     values: {
         startTime: 0,
         dieOne: 0,
-        dieTwo: 0
+        dieTwo: 0,
+        gameMessage: null
     },
 
 
@@ -28,9 +29,18 @@ var gameObject = {
 
         this.values.dieOne = rollOne;
         this.values.dieTwo = rollTwo;
+        var rollTotal = rollOne + rollTwo;
 
         this.gameSetup.dieOne.innerHTML = this.values.dieOne;
         this.gameSetup.dieTwo.innerHTML = this.values.dieTwo;
+
+        if (rollTotal == 7 || rollTotal == 11) {
+          this.values.gameMessage = "Winner!";
+          this.gameSetup.gameMessage.innerHTML = this.values.gameMessage;
+        } else {
+          this.values.gameMessage = "Try Again";
+          this.gameSetup.gameMessage.innerHTML = this.values.gameMessage;
+        }
 
     },
 
