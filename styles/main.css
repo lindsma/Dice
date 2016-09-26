@@ -9,7 +9,7 @@ body {
 
 section.game-container {
   width: 500px;
-  height: 350px;
+  height: 310px;
   background: #fff;
   margin: 10% auto 0;
   border: 1px solid #000;
@@ -19,7 +19,8 @@ section.game-container {
   section.game-container h3.win-lose-message {
     font-size: 22px;
     text-align: center;
-    padding-top: 5%; }
+    padding-top: 5%;
+    height: 30px; }
   section.game-container p.game-counter {
     height: 30px;
     background: red;
@@ -60,7 +61,7 @@ section.game-container {
       border: 1px solid #fff; }
   section.game-container p.game-date-time {
     height: 30px;
-    background: red;
-    margin-top: 20px; }
+    margin-top: 30px;
+    text-align: center; }
 
 /*# sourceMappingURL=main.css.map */

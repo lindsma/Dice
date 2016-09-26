@@ -18,11 +18,31 @@ var gameObject = {
     },
 
 
-    // The game object should have a function (method) for rolling the dice
 
-    //When the "Roll Dice" button is clicked, generate a random dice number for each die (1 through 6) and display the numbers on the dice
+    getStartTime: function() {
 
-    rollDice: function(rollOne, rollTwo) {
+    var rollTime = new Date();
+
+    var rollTimeYear = rollTime.getYear() + 1900;
+    var rollTimeMonth = rollTime.getMonth() + 1;
+    var rollTimeDate = rollTime.getDate();
+    var rollTimeHour = rollTime.getHours();
+    var rollTimeMinutes = rollTime.getMinutes();
+
+    if (rollTimeMinutes < 10) {
+      rollTimeMinutes = "0" + rollTimeMinutes;
+    }
+
+    var rollTimeString = "Game Started " + rollTimeYear + "-" + rollTimeMonth + "-" + rollTimeDate + " at " + rollTimeHour + ":" + rollTimeMinutes;
+
+    this.values.startTime = rollTimeString;
+    this.gameSetup.startTime.innerHTML = this.values.startTime;
+
+  },
+
+  //  Function for rolling the dice
+
+    rollDice: function() {
 
         var rollOne = Math.floor(Math.random() * 6) + 1;
         var rollTwo = Math.floor(Math.random() * 6) + 1;
@@ -41,6 +61,8 @@ var gameObject = {
           this.values.gameMessage = "Try Again";
           this.gameSetup.gameMessage.innerHTML = this.values.gameMessage;
         }
+
+        this.getStartTime();
 
     },
 
