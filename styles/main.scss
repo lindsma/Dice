@@ -1,0 +1,83 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+body {
+    background: lightgrey;
+    font-family: arial;
+}
+
+section.game-container {
+    width: 500px;
+    height: 350px;
+    background: #fff;
+    margin: 10% auto 0;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-weight: bold;
+    overflow: hidden;
+
+    h3.win-lose-message {
+        font-size: 22px;
+        text-align: center;
+        padding-top: 5%;
+    }
+
+    p.game-counter {
+      height: 30px;
+      background: red;
+      margin-top: 20px;
+    }
+
+    div.dice-container {
+        width: 100%;
+        height: 80px;
+        display: block;
+
+        div.dice {
+            width: 50%;
+            height: 100%;
+            margin: 0 auto;
+            padding-top: 20px;
+
+            div.die {
+                width: 80px;
+                height: 80px;
+                background: lightgrey;
+                border: 1px solid #000;
+                float: left;
+            }
+
+            .one {
+              margin-right: 17.6%;
+            }
+
+            .two {
+              margin-left: 17.6%;
+            }
+        }
+    }
+
+        div.btn-container {
+            clear: left;
+            text-align: center;
+            margin-top: 10%;
+
+            button.roll-dice-btn {
+              background: #333;
+              color: #fff;
+              font-size: 18px;
+              padding: 5px 15px;
+              border-radius: 10px;
+              border: 1px solid #fff;
+            }
+        }
+
+        p {
+          height: 30px;
+          background: red;
+          margin-top: 20px;
+        }
+    }
