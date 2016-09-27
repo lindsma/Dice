@@ -16,16 +16,29 @@ var gameObject = {
         gameMessage: null,
         gameDuration: null,
         gameRounds: [],
-        lose: true
+        lose: true,
     },
 
+    clearValues: function() {
+      this.values.startTime = 0;
+      this.values.dieOne = 0;
+      this.values.dieTwo = 0;
+      this.values.gameMessage = null;
+      this.values.gameDuration = null;
+      this.values.gameRounds = [];
+    },
 
     //  Function for rolling the dice
 
     rollDice: function() {
+        var rollTotal = 0;
+        if (this.values.lose === false) {
+          this.gameSetup.gameDuration.innerHTML = "";
+          this.clearValues();
+          this.values.lose = true;
+        }
 
-        for (var rollTotal = 0; this.values.lose = true; rolls++) {
-            this.values.lose = true;
+        if (this.values.lose === true) {
 
             var rollOne = Math.floor(Math.random() * 6) + 1;
             var rollTwo = Math.floor(Math.random() * 6) + 1;
@@ -65,9 +78,8 @@ var gameObject = {
 
         this.values.gameDuration = gameDurationString;
         this.gameSetup.gameDuration.innerHTML = this.values.gameDuration;
+
     },
-
-
 
     // Defining HTML elements
 
