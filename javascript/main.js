@@ -11,15 +11,48 @@ var gameObject = {
 
     values: {
         startTime: 0,
-        // startTimeSeconds: 0,
         dieOne: 0,
         dieTwo: 0,
         gameMessage: null,
         gameDuration: null,
         gameRounds: [],
-        // startDate: 0
+        lose: true
     },
 
+
+    //  Function for rolling the dice
+
+    rollDice: function() {
+
+        for (var rollTotal = 0; this.values.lose = true; rolls++) {
+            this.values.lose = true;
+
+            var rollOne = Math.floor(Math.random() * 6) + 1;
+            var rollTwo = Math.floor(Math.random() * 6) + 1;
+
+            this.values.dieOne = rollOne;
+            this.values.dieTwo = rollTwo;
+            var rollTotal = rollOne + rollTwo;
+
+            this.gameSetup.dieOne.innerHTML = this.values.dieOne;
+            this.gameSetup.dieTwo.innerHTML = this.values.dieTwo;
+
+            if (rollTotal == 7 || rollTotal == 11) {
+                this.values.gameMessage = "Winner!";
+                this.gameSetup.gameMessage.innerHTML = this.values.gameMessage;
+                this.values.lose = false;
+                this.values.gameRounds.push(rollOne + rollTwo);
+                this.getGameRounds ();
+
+            } else {
+                this.values.gameMessage = "Try Again";
+                this.gameSetup.gameMessage.innerHTML = this.values.gameMessage;
+                this.values.gameRounds.push(rollOne + rollTwo);
+            }
+        }
+    },
+
+    // Count rounds and time to "win"
 
     getGameRounds: function() {
 
@@ -35,33 +68,6 @@ var gameObject = {
     },
 
 
-    //  Function for rolling the dice
-
-    rollDice: function() {
-
-        var rollOne = Math.floor(Math.random() * 6) + 1;
-        var rollTwo = Math.floor(Math.random() * 6) + 1;
-
-        this.values.dieOne = rollOne;
-        this.values.dieTwo = rollTwo;
-        var rollTotal = rollOne + rollTwo;
-
-        this.gameSetup.dieOne.innerHTML = this.values.dieOne;
-        this.gameSetup.dieTwo.innerHTML = this.values.dieTwo;
-
-        if (rollTotal == 7 || rollTotal == 11) {
-            this.values.gameMessage = "Winner!";
-            this.gameSetup.gameMessage.innerHTML = this.values.gameMessage;
-            this.values.win = true;
-            this.getGameRounds();
-        } else {
-            this.values.gameMessage = "Try Again";
-            this.gameSetup.gameMessage.innerHTML = this.values.gameMessage;
-            this.values.gameRounds = gameRounds;
-            this.gameSetup.gameRounds = this.values.gameRounds;
-        }
-
-    },
 
     // Defining HTML elements
 
@@ -81,9 +87,8 @@ var gameObject = {
         this.defineGameSetup();
 
         this.gameSetup.rollBtn.addEventListener("click", this.rollDice.bind(this));
-        this.gameSetup.rollBtn.addEventListener("click", this.getGameRounds.bind(this));
 
-    // Start time on page load & display bottom
+        // Start time on page load & display bottom
 
         this.values.startTime = new Date();
         var rollTimeYear = this.values.startTime.getYear() + 1900;
