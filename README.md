@@ -13,7 +13,11 @@ The JavaScript for the game must do the following:
     * the start date/time of the game
     * an array of the game rounds
     (Each round lasts until the user wins, so one round should have the start time of that round plus the number of rolls of        the dice that have occurred for that round.)
-
+  * The game object should have a function (method) for rolling the dice
+* When the page is loaded, display the start date and time at the bottom
+* When the "Roll Dice" button is clicked, generate a random dice number for each die (1 through 6) and display the numbers on the dice
+* When the random dice numbers total anything besides 7 and 11, print "Try Again" at the top and increment the current round roll counter in your game object.
+* When the random dice numbers total 7 or 11, print "Winner!" at the top along with how many rolls it took the player that round and how long in seconds that round took. 
 
 
 #### Iron Yard Homework
